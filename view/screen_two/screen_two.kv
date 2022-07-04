@@ -1,0 +1,198 @@
+<ScreenTwo>:
+	MDBoxLayout:
+		orientation: "vertical"
+		MDToolbar:
+			id: toolbar
+			pos_hint: {"top": 1}
+			# md_bg_color: 1,1,1,1
+			specific_text_color: 1,1,1,1
+			elevation: 10
+			title: "Analisa Kualitas Air"
+		MDBoxLayout:
+			orientation: 'vertical'
+			padding: [dp(30),]
+			spacing: dp(20)
+			adaptive_height: True
+			MDBoxLayout:
+				adaptive_height: True
+				MDLabel:
+					text: 'KECERAHAN '
+					bold: True
+					adaptive_height: True
+					color: app.theme_cls.primary_color
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDDropDownItem:
+				        id: field_kecerahan
+				        pos_hint: {'center_x': .5}
+				        text: 'Pilih'
+				        on_release: root.menu_kecerahan.open()
+				        # on_focus: if self.focus: root.menu_kecerahan.open()
+				    Widget:
+			MDBoxLayout:
+				adaptive_height: True
+				MDLabel:
+					text: 'SALINITAS '
+					bold: True
+					adaptive_height: True
+					color: app.theme_cls.primary_color
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDDropDownItem:
+				        id: field_salinitas
+				        pos_hint: {'center_x': .5}
+				        text: 'Pilih'
+				        on_release: if self.focus: root.menu_salinitas.open()
+				    Widget:
+			MDBoxLayout:
+				adaptive_height: True
+				spacing: dp(0)
+				MDLabel:
+					text: 'PH '
+					bold: True
+					color: app.theme_cls.primary_color
+					adaptive_height: True
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDDropDownItem:
+				        id: field_ph
+				        pos_hint: {'center_x': .5}
+				        text: 'Pilih'
+				        on_release: if self.focus: root.menu_ph.open()
+				    Widget:
+			MDRaisedButton:
+				text: 'Proses'
+				pos_hint: {'center_x':.5}
+				on_release: root.proses(field_kecerahan.text, field_salinitas.text, field_ph.text)
+			MDLabel:
+				text: 'Keterangan Analisa SHC: '
+				bold: True
+				# color: 1,0,0,1
+				adaptive_height: True
+				halign: 'center'
+
+			MDBoxLayout:
+				adaptive_height: True
+				MDLabel:
+					text: 'Kecerahan'
+					bold: True
+					# color: 0,1,0,1
+					adaptive_height: True
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDLabel:
+						id: hasil_kec
+						text: 'Hasil'
+						bold: True
+						color: 1,0,0,1
+						adaptive_height: True
+						# size_hint_x: .05
+
+			MDBoxLayout:
+				adaptive_height: True
+				MDLabel:
+					text: 'Salinitas'
+					bold: True
+					# color: 0,1,0,1
+					adaptive_height: True
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDLabel:
+						id: hasil_sal
+						text: 'Hasil'
+						bold: True
+						color: 1,0,0,1
+						adaptive_height: True
+						# size_hint_x: .05
+
+			MDBoxLayout:
+				adaptive_height: True
+				MDLabel:
+					text: 'Ph'
+					bold: True
+					# color: 0,1,0,1
+					adaptive_height: True
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDLabel:
+						id: hasil_ph
+						text: 'Hasil'
+						bold: True
+						color: 1,0,0,1
+						adaptive_height: True
+						# size_hint_x: .05
+			MDBoxLayout:
+				adaptive_height: True
+				MDLabel:
+					text: 'HASIL '
+					bold: True
+					color: 0,1,0,1
+					adaptive_height: True
+				MDBoxLayout:
+					MDLabel:
+						text: ':'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						size_hint_x: .05
+					MDLabel:
+						id: hasil
+						text: 'Hasil'
+						bold: True
+						color: app.theme_cls.primary_color
+						adaptive_height: True
+						# size_hint_x: .05
+		MDBoxLayout:
+			orientation: 'vertical'
+			padding: dp(30)
+		MDToolbar:
+			id: toolbar
+			# pos_hint: {"top": 1}
+			# md_bg_color: 1,1,1,1
+			specific_text_color: 1,1,1,1
+			elevation: 10
+			title: ""
+<IconListItem>
+
+    IconLeftWidget:
+        icon: root.icon
+
+<Content>
+    adaptive_height: True
+
+    TwoLineIconListItem:
+        text: "(050)-123-45-67"
+        secondary_text: "Mobile"
+
+        IconLeftWidget:
+            icon: 'phone'

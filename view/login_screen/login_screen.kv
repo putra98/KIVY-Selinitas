@@ -1,0 +1,90 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+
+<LoginScreen>:
+	MDBoxLayout:
+		orientation: 'vertical'
+		MDBoxLayout:
+			size_hint_y: None
+			padding: ['10dp']
+			Image:
+				# size_hint_y: None
+				size_hint_x: None
+	            source: 'assets/image/msp2.png'
+				width: 80
+				allow_stretch: True
+                # size_hint_x: 0
+			MDLabel:
+				text: 'DINAS KETENAGAKERJAAN KABUPATEN BEKASI'
+				bold: True
+				# halign: 'center'
+				font_size: '15sp'
+				color: self.theme_cls.primary_color
+				# pos_hint: {'center_x':0,}
+
+	            # pos: (((self.parent.size[0])/2)-100,self.pos[1])
+
+		MDBoxLayout:
+			id: loyout
+			padding: ['20dp','20dp','20dp','20dp']
+			MDCard:	
+				orientation: 'vertical'
+				pos_hint: {'center_x':.5,'center_y': .5}
+
+				GridLayout:
+					cols: 1
+					rows: 4
+					MDToolbar:
+					    id: toolbar
+					    pos_hint: {"top": 1}
+					    elevation: 10
+					    title: "Login"
+					    # left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+					    # right_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+					MDBoxLayout:
+						orientation: 'vertical'
+						spacing: '10dp'
+						padding: ['40dp','20dp','40dp','20dp']
+						MDTextField:
+						    hint_text: "Username"
+						    mode: "rectangle"
+
+						MDTextField:
+						    hint_text: "Password"
+						    mode: "rectangle"
+					MDBoxLayout:
+						size_hint_y: None
+		    			adaptive_height: True
+						orientation: 'horizontal'
+						padding: ['10dp','0dp','20dp','20dp']
+						MDFlatButton:
+						    text: "Lupa Password"
+						    theme_text_color: "Custom"
+						    text_color: 0, 0, 1, 1
+					    	pos_hint: {'center_x':.5,}
+					    Widget:
+
+						MDFlatButton:
+						    text: "Mendaftar"
+						    theme_text_color: "Custom"
+					    	pos_hint: {'center_x':.5,}
+						    
+						    text_color: 0, 0, 1, 1
+					MDBoxLayout:
+						size_hint_y: None
+						orientation: 'horizontal'
+						padding: ['20dp','20dp','20dp','80dp']
+						MDRaisedButton:
+					    	text: "Login"
+					    	pos_hint: {'center_x':.5,}
+					    	md_bg_color: self.theme_cls.primary_color
+		    				on_release: root.manager.current = 'home_name'
+		MDBoxLayout:
+		    adaptive_height: True
+		    md_bg_color: app.theme_cls.primary_color
+		    MDLabel:
+		    	text: 'Copyright © 2020 Dinas Ketenagakerjaan \n Kabupaten Bekasi '
+		    	halign: 'center'
+		    	color: 1,1,1,1
+		    	font_size: '12sp'
+			

@@ -1,0 +1,15 @@
+<ScreenOne>:
+	MDRaisedButton:
+		text: 'ABSEN'
+		pos_hint: {'center_x': .5, 'center_y':.5}
+		on_release:
+			root.manager.current = 'camera_name'
+<Content>
+    adaptive_height: True
+
+    TwoLineIconListItem:
+        text: "(050)-123-45-67"
+        secondary_text: "Mobile"
+
+        IconLeftWidget:
+            icon: 'phone'

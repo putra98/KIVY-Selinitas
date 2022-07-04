@@ -1,0 +1,118 @@
+<ScreenProfile>:
+
+	MDBoxLayout:
+		orientation: "vertical"
+	    padding: "10dp"
+	    spacing: "8dp"
+	    MDBoxLayout:
+			adaptive_height: True
+			md_bg_color:  app.theme_cls.primary_color
+			# MDBoxLayout:
+			# 	canvas.after:
+			# 		Color:
+			# 			rgba: (1, 1, 1, 1) 
+		            # RoundedRectangle:
+		       #          size: (self.size[1]-dp(14), self.size[1]-dp(14))
+		       #          pos: (self.pos[0]+(self.size[0]-self.size[1])/2, self.pos[1]+dp(7))
+		    			# source: 'assets/image/msp.jpg'
+		                    # source: root.image_source
+		                # radius: [self.size[1]-(self.size[1]/2)]
+		MDBoxLayout:
+			# md_bg_color:  app.theme_cls.primary_color
+
+			ScrollView:
+
+			    MDList:
+			    	spacing: '10dp'
+			    	MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+				    	MDIconButton:
+						    icon: "account-circle"
+						    theme_icon_color: "Custom"
+						    icon_color: app.theme_cls.primary_color
+
+					    MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDLabel:
+								text: "Nama"
+						        font_style: "Caption"
+
+							MDLabel:
+								text: "Moh Saputra Pangestu"
+						        font_style: "Button"
+					MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+				    	MDIconButton:
+						    icon: "email"
+						    theme_icon_color: "Custom"
+						    icon_color: app.theme_cls.primary_color
+					        
+					    MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDLabel:
+								text: "Email"
+						        font_style: "Caption"
+
+							MDLabel:
+								text: "saputrapangestu@gmail.com"
+						        font_style: "Button"
+
+					MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+				    	MDIconButton:
+						    icon: "home-city"
+						    theme_icon_color: "Custom"
+						    icon_color: app.theme_cls.primary_color
+					        
+					    MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDLabel:
+								text: "Tempat Lahir"
+						        font_style: "Caption"
+
+							MDLabel:
+								text: "Tegal"
+						        font_style: "Button"
+					MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+				    	MDIconButton:
+						    icon: "calendar-account"
+						    theme_icon_color: "Custom"
+						    icon_color: app.theme_cls.primary_color
+					        
+					    MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDLabel:
+								text: "Tanggal Lahir"
+						        font_style: "Caption"
+
+							MDLabel:
+								text: "21 Februari !998"
+						        font_style: "Button"					
+					MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+				    	MDIconButton:
+						    icon: "phone"
+						    theme_icon_color: "Custom"
+						    icon_color: app.theme_cls.primary_color
+					        
+					    MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDLabel:
+								text: "Phone"
+						        font_style: "Caption"
+
+							MDLabel:
+								text: "+89623828372"
+						        font_style: "Button"
+	MDFloatingActionButton:
+		icon: "account-edit"
+		md_bg_color: app.theme_cls.primary_color
+		pos_hint: {'center_x': .835, 'center_y': .1}
+		on_release:
+			root.manager.current = 'screen_edit_name'

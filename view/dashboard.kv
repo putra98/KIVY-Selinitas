@@ -1,0 +1,128 @@
+#: import HomeScreen view.home_screen.home_screen
+#: import LoginScreen view.login_screen.login_screen
+#: import ScreenProfile view.profile_screen.screen_profile
+#: import ScreenEdit view.profile_screen.screen_edit
+#: import ScreenTwo view.screen_two.screen_two
+
+<Dashboard>:
+	orientation: 'vertical'
+	sm: screen_manager
+    MDNavigationLayout:
+        # x: toolbar.height
+
+        ScreenManager:
+            id: screen_manager
+
+            # LoginScreen:
+            #     name: "login_name"
+
+    #         MDScreen:
+				# name: "home_name"
+				# BoxLayout:
+				# 	orientation:'vertical'
+				# 	MDToolbar:
+				# 	    id: toolbar
+				# 	    pos_hint: {"top": 1}
+				# 	    md_bg_color: 1,1,1,1
+				# 	    specific_text_color: app.theme_cls.primary_color
+				# 	    elevation: 10
+				# 	    title: "Attendance"
+				# 	    text_color: 0,0,1,1
+				# 	    # left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+				# 	    right_action_items: [["microsoft-xbox-controller-menu", lambda x: nav_drawer.set_state("open")]]
+				# 	HomeScreen:
+				# 		name: 'screen_home_name'
+			ScreenTwo:
+				name: 'profile_name'
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+<ContentNavigationDrawer>:
+	MDBoxLayout:
+		orientation: "vertical"
+	    padding: "10dp"
+	    spacing: "8dp"
+		MDBoxLayout:
+			orientation: "vertical"
+			adaptive_height: True
+	    	padding: "10dp"
+			md_bg_color:  app.theme_cls.primary_color
+		    AnchorLayout:
+		        anchor_x: "left"
+		        size_hint_y: None
+		        height: avatar.height
+
+		        Image:
+		            id: avatar
+		            size_hint: None, None
+		            size: "56dp", "56dp"
+	    			source: 'assets/image/msp2.png'
+
+
+		    MDLabel:
+		        text: "KivyMD library"
+		        font_style: "Button"
+		        size_hint_y: None
+		        color: 1,1,1,1
+		        height: self.texture_size[1]
+
+		    MDLabel:
+		        text: "kivydevelopment@gmail.com"
+		        font_style: "Caption"
+		        size_hint_y: None
+		        color: 1,1,1,1
+		        height: self.texture_size[1]
+
+	    ScrollView:
+
+	        MDList:
+				OneLineIconListItem:
+				    text: "Home"
+		        	color: 1,1,1,1
+	                on_press:
+	                    root.nav_drawer.set_state("close")
+	                    root.screen_manager.current = "home_name"
+
+				    IconLeftWidget:
+				        icon: "home"
+			        	theme_text_color: "Custom"
+			        	text_color: app.theme_cls.primary_color
+
+				# OneLineIconListItem:
+				#     text: "Profile"
+	   #              on_press:
+	   #                  root.nav_drawer.set_state("close")
+	   #                  root.screen_manager.current = "profile_name"
+				# 		root.screen_manager.transition.direction = 'left'
+
+				#     IconLeftWidget:
+				#         icon: "account-circle"
+			 #        	theme_text_color: "Custom"
+			 #        	text_color: app.theme_cls.primary_color
+
+				OneLineIconListItem:
+				    text: "About"
+	                on_press:
+	                    root.nav_drawer.set_state("close")
+	                    root.screen_manager.current = "login_name"
+
+				    IconLeftWidget:
+				        icon: "information-outline"
+			        	theme_text_color: "Custom"
+			        	text_color: app.theme_cls.primary_color
+				OneLineIconListItem:
+				    text: "Logout"
+	                on_press:
+	                    root.nav_drawer.set_state("close")
+	                    root.screen_manager.current = "login_name"
+
+				    IconLeftWidget:
+				        icon: "logout"
+			        	theme_text_color: "Custom"
+			        	text_color: app.theme_cls.primary_color

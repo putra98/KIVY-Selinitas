@@ -1,0 +1,106 @@
+<ScreenAbsen>:
+	# MDFloatingActionButton:
+	# 	icon: "qrcode"
+	# 	md_bg_color: app.theme_cls.primary_color
+	# 	pos_hint: {'center_x': .835, 'center_y': .1}
+	# 	on_release:
+	# 		root.manager.current = 'profile_name'
+	MDBoxLayout:
+		orientation: 'vertical'
+		MDBoxLayout:
+			# md_bg_color: app.theme_cls.primary_color
+			adaptive_height: True
+			padding:['30dp','15dp','30dp','0dp']
+		    MDLabel:
+		        text: "Absensi"
+		    	bold: True
+		    	color: app.theme_cls.primary_color
+			# MDLabel:
+		 #        text: app.gps_status
+		 #    	bold: True
+		 #    	color: app.theme_cls.primary_color
+
+		    MDIconButton:
+		        icon: "account-circle"
+		        pos_hint: {"center_x": .5, "center_y": .5}
+				text: 'Start' if self.state == 'normal' else 'Stop'
+	            color: 0,0,1,1
+
+		MDBoxLayout:
+			# md_bg_color:  app.theme_cls.primary_color
+
+			ScrollView:
+
+			    MDList:
+			    	spacing: '10dp'
+			    	MDBoxLayout:
+			    		orientation: "vertical"
+			    		adaptive_height: True
+					    # Camera:
+					    #     id: camera
+					    #     resolution: (640, 480)
+					    #     play: False
+					    # ToggleButton:
+					    #     text: 'Play'
+					    #     on_press: camera.play = not camera.play
+					    #     size_hint_y: None
+					    #     height: '48dp'
+					    # Button:
+					    #     text: 'Capture'
+					    #     size_hint_y: None
+					    #     height: '48dp'
+					    #     on_press: root.capture()
+			    	MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+				    	MDIconButton:
+						    icon: "google-maps"
+						    theme_icon_color: "Custom"
+						    icon_color: app.theme_cls.primary_color
+
+					    MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDLabel:
+								text: "Lokasi"
+						        font_style: "Caption"
+
+							MDRaisedButton:
+								id: loaction_poin
+								# text: 'app.gps_location'
+								text: app.gps_location
+						        font_style: "Button"
+						        md_bg_color: 1,1,1,1
+						        text_color: app.theme_cls.primary_color
+								on_release: root.get_link(loaction_poin.text)
+						MDBoxLayout:
+					    	orientation: "vertical"
+					    	MDSwitch:
+					    		pos_hint: {'center_x': .5, 'center_y': .5}
+					    		on_active: root.on_checkbox_active()
+							# ToggleButton:
+							# 	text: 'Start' if self.state == 'normal' else 'Stop'
+							# 	background_color: app.theme_cls.primary_color
+								on_state:
+									app.start(1000, 0) if self.state == 'down' else \
+									app.stop()
+					MDBoxLayout:
+			    		orientation: "horizontal"
+			    		adaptive_height: True
+			    		Widget:
+				    	MDRaisedButton:
+						    text: 'KIRIM'
+						    theme_icon_color: "Custom"
+						    pos_hint: {'center_x': .5, 'center_y':.5}
+						    icon_color: app.theme_cls.primary_color
+							on_release: root.send(loaction_poin.text)
+					    Widget:
+
+<Content>
+    adaptive_height: True
+
+    TwoLineIconListItem:
+        text: "(050)-123-45-67"
+        secondary_text: "Mobile"
+
+        IconLeftWidget:
+            icon: 'phone'

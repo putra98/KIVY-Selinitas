@@ -1,0 +1,58 @@
+#: import ScreenOne view.screen_one.screen_one
+#: import ScreenTwo view.screen_two.screen_two
+#: import ScreenThree view.screen_three.screen_three
+#: import ScreenEdit view.screen_three.screen_edit
+#: import ScreenProfile view.screen_three.screen_profile
+#: import ScreenAbsen view.screen_one.screen_absen
+#: import ScreenCamera view.screen_one.screen_camera
+
+
+<HomeScreen>:
+	sm_1: screenmanger_1
+	sm_2: screenmanger_2
+	sm_3: screenmanger_3
+	MDBottomNavigation:
+	    panel_color: 1,1,1,1
+	    MDBottomNavigationItem:
+	        name: 'screen_nav_1'
+	        # text: 'Python'
+	        icon: 'chart-line'
+			ScreenManager:
+				id: screenmanger_1
+				ScreenOne:
+					name: 'screen_one_name'
+
+				ScreenAbsen:
+					name: 'absen_name'   
+
+				ScreenCamera:
+					name: 'camera_name'               	
+				# Screen:
+				# 	name: 'js'
+		MDBottomNavigationItem:
+		    name: 'screen_nav_2'
+		    # text: 'Python'
+		    icon: 'format-list-checks'
+			ScreenManager:
+				id: screenmanger_2
+				ScreenTwo:
+					name: 'screen_two_name'
+				# Screen:
+				# 	name: 'c'	            	
+				# Screen:
+				# 	name: 'js'
+		MDBottomNavigationItem:
+		    name: 'screen_nav_3'
+		    # text: 'Profile'
+		    icon: 'account-circle'
+			ScreenManager:
+				id: screenmanger_3
+				ScreenThree:
+					name: 'screen_three_name'
+
+				ScreenEdit:
+					name: 'screen_edit_name'   
+				# ScreenEdit:
+				# 	name: 'screen_edit_name'          	
+				# Screen:
+				# 	name: 'js'

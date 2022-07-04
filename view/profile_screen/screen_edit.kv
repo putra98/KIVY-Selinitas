@@ -1,0 +1,125 @@
+<ScreenEdit>:
+	MDBoxLayout:
+		orientation: "vertical"
+		MDBoxLayout:
+			orientation: "vertical"
+			adaptive_height: True
+			MDIconButton:
+				icon: 'arrow-left-thick'
+				icon_color: app.theme_cls.primary_color
+				on_release:
+					root.manager.current = 'profile_name'
+					root.manager.transition.direction = 'right'
+		MDBoxLayout:
+			orientation: "vertical"
+		    padding: "10dp"
+		    spacing: "8dp"
+		    MDBoxLayout:
+		    	orientation: "vertical"
+				adaptive_height: True
+				MDBoxLayout:
+				# md_bg_color:  app.theme_cls.primary_color
+					adaptive_height: True
+
+					Widget:
+					MDIconButton:
+					    icon: "account-edit"
+					    user_font_size: "64sp"
+					    icon_color: 1,10,0,0
+					    pos_hint: {"center_x": .5, "center_y": .5}
+					Widget:
+				MDLabel:
+					text: "./hall/abc.jpg"
+				    bold: True
+				    halign: 'center'
+				    color: app.theme_cls.primary_color
+			MDBoxLayout:
+				# md_bg_color:  app.theme_cls.primary_color
+
+				ScrollView:
+
+				    MDList:
+				    	spacing: '10dp'
+				    	MDBoxLayout:
+				    		orientation: "horizontal"
+				    		adaptive_height: True
+					    	MDIconButton:
+							    icon: "account-circle"
+							    theme_icon_color: "Custom"
+							    icon_color: app.theme_cls.primary_color
+
+							MDTextField:
+								text: 'Moh Saputra Pangestu'
+							    hint_text: "Nama"
+							    required: True
+							    helper_text_mode: "on_error"
+							    helper_text: "Pastikan field harus terisi"
+
+						MDBoxLayout:
+				    		orientation: "horizontal"
+				    		adaptive_height: True
+					    	MDIconButton:
+							    icon: "email"
+							    theme_icon_color: "Custom"
+							    icon_color: app.theme_cls.primary_color
+						        
+							MDTextField:
+								text: 'Msaputrapangestu@gmail.com'
+							    hint_text: "Email"
+							    required: True
+							    helper_text_mode: "on_error"
+							    helper_text: "Pastikan field harus terisi"
+
+						MDBoxLayout:
+				    		orientation: "horizontal"
+				    		adaptive_height: True
+					    	MDIconButton:
+							    icon: "home-city"
+							    theme_icon_color: "Custom"
+							    icon_color: app.theme_cls.primary_color
+						        
+							MDTextField:
+								text: 'Tegal'
+							    hint_text: "Tempat Lahir"
+							    required: True
+							    helper_text_mode: "on_error"
+							    helper_text: "Pastikan field harus terisi"
+
+						MDBoxLayout:
+				    		orientation: "horizontal"
+				    		adaptive_height: True
+					    	MDIconButton:
+							    icon: "calendar-account"
+							    theme_icon_color: "Custom"
+							    icon_color: app.theme_cls.primary_color
+						        
+
+							MDTextField:
+								text: '21 Februari !998'
+							    hint_text: "Tanggal Lahir"
+							    required: True
+							    helper_text_mode: "on_error"
+							    helper_text: "Pastikan field harus terisi"		
+
+						MDBoxLayout:
+				    		orientation: "horizontal"
+				    		adaptive_height: True
+					    	MDIconButton:
+							    icon: "phone"
+							    theme_icon_color: "Custom"
+							    icon_color:app.theme_cls.primary_color
+
+							MDTextField:
+								text: '+89623828372'
+							    hint_text: "Phone"
+							    required: True
+							    helper_text_mode: "on_error"
+							    helper_text: "Pastikan field harus terisi"		
+						MDBoxLayout:
+				    		orientation: "horizontal"
+				    		adaptive_height: True
+				    		Widget:
+				    		MDRaisedButton:
+							    text: "Save"
+							    md_bg_color: app.theme_cls.primary_color
+							Widget:
